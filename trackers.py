@@ -12,7 +12,7 @@ if __name__ == '__main__' :
 # Instead of MIL, you can also use
 
     trackerTypes = ['BOOSTING', 'MIL','KCF', 'TLD', 'MEDIANFLOW', 'GOTURN', 'MOSSE', 'CSRT']
-    tracker_type = trackerTypes[2]
+    tracker_type = trackerTypes[3]
 
     if int(minor_ver) < 3:
         #tracker = cv2.Tracker_create(tracker_type)
@@ -67,8 +67,7 @@ while(1):
 # Display result
     cv2.imshow("Tracking", frame)
 
-    K = cv2.waitKey(1)
-    if (K==27):
+    if cv2.waitKey(1) == ord('q'):
         break
 
 cap.release()
